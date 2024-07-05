@@ -1,0 +1,16 @@
+220 Knoppix FTP server (GNU inetutils 1.4.2) ready.
+USER consult
+331 Password required for consult.
+PASS consult3000
+230- Welcome to Knoppix!
+230 User consult logged in.
+SYST
+215 UNIX Type: L8 Version: Linux 2.6.19
+PORT 127,0,0,1,128,231
+200 PORT command sucessful.
+LIST
+150 Opening ASCII mode data connection for '/bin/ls'.
+226 Transfer complete.
+QUIT
+221 Goodbye.
+ 

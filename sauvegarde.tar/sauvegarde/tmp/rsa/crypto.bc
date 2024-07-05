@@ -1,0 +1,50 @@
+ /*
+  *  Programmes bc de cryptographie 
+  *
+  *  Copyright 2005 F. Mailhot et Universite de Sherbrooke
+  */
+
+"
+Les fonctions suivantes sont definies dans ce script (elles sont
+tirees des notes sur l'introduction a RSA):
+
+pgcd(a, b)		( plus grand commun diviseur de a et b )
+eratosthene(max)	( liste les nombres premiers < max ) 
+
+n_prob et e_prob:
+contiennent les valeurs de n et e de la problematique 
+"
+n_prob = 86062381025757488680496918738059554508315544797
+e_prob = 13
+
+
+define pgcd(a, b) {
+	auto r, t
+
+	if (a < b) {
+		t = a
+		a = b
+		b = t
+	}
+	r = a % b
+	while (r != 0) {
+		a = b
+		b = r
+		r = a % b
+	}
+
+	return b
+}
+
+
+define eratosthene(max) {
+	auto i, j
+
+	for (i = 2; i < max; i = i + 1) { premier[i] = 1 }
+	sqrt_max = sqrt(max)
+	for (i = 2; i <= sqrt_max; i = i + 1) {
+		if (premier[i] == 1) {
+			for (j = 2 * i; j <= max; j = j + i) { premier[j] = 0 }
+		}
+	}
+}
